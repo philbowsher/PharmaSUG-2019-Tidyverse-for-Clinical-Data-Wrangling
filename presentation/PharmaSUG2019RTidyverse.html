@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tidyverse for Clinical Data Wrangling</title>
+    <meta charset="utf-8">
+    <meta name="author" content="twitter:@rinpharma github:philbowsher" />
+    <link rel="stylesheet" href="include/rstudio.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <span style="color:orange">Tidyverse</span> <span style="color:#FFFFFF">for Clinical Data Wrangling</span>
+### <span style="color:#FFFFFF">twitter:<span class="citation">@rinpharma</span> github:philbowsher</span>
+
+---
+
+
+
+
+
+class: subtitle-slide, white, middle, center
+
+# 2018 Tidyverse &amp; Shiny
+
+---
+
+
+class: panel-narrow-slide, left
+
+# RStudio Conf 2018 
+- "R for clinical trial data manipulation and cleanup"
+- https://www.rstudio.com/rstudio-conf-e-poster-sessions/
+- https://towardsdatascience.com/a-gentle-guide-to-statistics-in-r-ccb91cc1177e
+
+---
+
+class: panel-narrow-slide, left
+
+# Pharmasug
+- https://www.pharmasug.org/proceedings/2018/AD/PharmaSUG-2018-AD24.pdf
+- https://github.com/korchakandrey/Expand-Your-Skills-From-SAS-To-R
+- https://www.pharmasug.org/proceedings/2018/BB/PharmaSUG-2018-BB22.pdf
+
+---
+
+class: panel-narrow-slide, left
+
+# MBSW
+
+- https://github.com/freestatman/MBSW_2018_Tidyverse_Talk
+- http://www.mbswonline.com/upload/presentation_6-22-2018-14-25-55.introducing%20r_tidyverse%20to%20clinical%20statistical%20programming.pdf
+
+---
+
+class: panel-narrow-slide, left
+
+# Phuse
+- https://www.phusewiki.org/docs/2018_Frankfurt/2018%20US%20CSS/posters/PP10.pdf
+- https://www.lexjansen.com/phuse-us/2018/tt/TT14.pdf
+- https://www.phusewiki.org/docs/2018_Frankfurt/2018%20US%20CSS/posters/PP08.pdf
+
+---
+
+
+class: panel-narrow-slide, left
+
+# R Pharma
+- http://rinpharma.com/program/the-magic-r-shiny-app-that-can-boost-your-sdtm-usability-and-viability-while-saving-time.html
+- http://appliedpredictivemodeling.com/blog/rpharma18
+
+---
+
+class: panel-narrow-slide, left
+
+# PAGE
+- https://www.eventbrite.com/e/the-tidyverse-for-pharmacometrics-tickets-33043259278#
+---
+
+class: panel-narrow-slide, left
+
+# ACOP
+- https://uupharmacometrics.github.io/xpose/
+- https://github.com/nlmixrdevelopment/nlmixr
+- https://github.com/metrumresearchgroup/mrgsolve
+- https://www.ivyexec.com/job-opening/senior-pharmacometrician/basel/switzerland?job_id=6089694
+---
+
+
+
+class: subtitle-slide, white, middle, center
+
+# What is the Tidyverse?
+
+---
+
+
+
+
+
+
+
+
+
+
+
+class: panel-narrow-slide, left
+
+# Tidyverse is a...
+- a package of packages that...
+- share an underlying design philosophy, grammar, and data structures
+- https://www.tidyverse.org/
+---
+
+
+class: panel-narrow-slide, left
+
+# R for Data Science
+
+- [Tools needed in a typical data science project](http://r4ds.had.co.nz/introduction.html)
+- https://github.com/rstudio/RStartHere
+
+
+---
+
+
+
+
+class: subtitle-slide, white, middle, center
+
+# Live Demo
+
+---
+
+
+
+
+
+class: panel-narrow-slide, left
+
+# NDA's &amp; R
+
+- https://www.accessdata.fda.gov/drugsatfda_docs/nda/2016/208573Orig1s000ClinPharmR.pdf
+- https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209296Orig1s000ClinPharmR.pdf
+- http://washstat.org/presentations/20181024/Schuette.pdf
+- https://cran.r-project.org/web/views/ClinicalTrials.html
+- https://www.r-project.org/doc/R-FDA.pdf
+- https://github.com/andyofsmeg/RValidation
+---
+
+
+class: panel-narrow-slide, left
+
+# Validation
+
+- https://www.r-project.org/doc/R-FDA.pdf
+- https://www.rstudio.com/wp-content/uploads/2014/06/RStudio-Commercial-IDE-Validation.pdf
+- https://www.rstudio.com/wp-content/uploads/2014/06/RStudio-Shiny-Server-Pro-Validation.pdf
+
+---
+
+class: panel-narrow-slide, left
+
+# Collaboration
+
+.pull-left[
+  # [R in Pharma](https://rinpharma.com)
+  ]
+.pull-right[ 
+  # [Pharma R PSI](https://pharmar.org)
+]
+
+---
+
+
+class: panel-narrow-slide, left
+
+# Clinical Trials Programming
+- Clinical Trials Data Structures
+- Import and Export Clinical Trials Data
+- Manage Clinical Trials Data
+- Transform Clinical Trials Data
+- Apply Statistical Procedures for Clinical Trials
+- Functions &amp; Packages for Clinical Trials
+- Report Clinical Trials Results
+- Validate Clinical Trial Data Reporting
+
+---
+
+class: panel-narrow-slide, left
+
+# Key focus of R/Pharma
+- https://rviews.rstudio.com/2018/10/03/some-thoughts-on-r-pharma-2018/
+---
+
+
+class: panel-narrow-slide, left
+
+# History
+- https://www.nytimes.com/2009/01/07/technology/business-computing/07program.html?pagewanted=2
+- http://appliedpredictivemodeling.com/
+
+---
+
+
+class: panel-narrow-slide, left
+
+# R4DD
+
+- Tidyverse is a powerful system that extends itself well to the many phases of drug development
+- https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/
+- https://r-medicine.com/talks/michael-lawrence-keynote.pdf
+- https://rworkshop.uni.lu/lectures/lecture06_dplyr.html#1
+- http://bioconductor.org/packages/release//bioc/vignettes/destiny/inst/doc/tidyverse.pdf
+- https://www.biorxiv.org/content/biorxiv/early/2018/09/26/327841.full.pdf
+
+---
+
+class: panel-narrow-slide, left
+
+
+# Remember dplyr single table verbs
+
+- filter() extract cases
+- arrange() reorder cases
+- group_by() group cases
+- select() extract variables
+- mutate() create new variables
+- summarise() summarise variables / create cases
+---
+
+class: panel-narrow-slide, left
+
+
+# Remember tidyr single table verbs
+
+- spread() move values into column names
+- gather() move column names into values
+- separate() separate variables that share a column
+- unite() unite a variable that is split across several columns
+---
+
+class: panel-narrow-slide, left
+
+
+# The pipe operator %&gt;%
+- Passes result on left into first argument of function on right
+- And then
+- mutate(babynames, percent = prop * 100)
+- babynames %&gt;% mutate(percent = prop * 100)
+---
+
+class: panel-narrow-slide, left
+
+
+# Tibble Example
+
+
+```r
+library(tibble)
+#library("tidyverse")
+storms &lt;-tribble(
+~storm, ~wind, ~pressure, ~date,
+"Alberto", 110, 1007, "2000-08-12",
+"Alex", 45, 1009, "1998-07-30",
+"Allison", 65, 1005, "1995-06-04",
+"Ana", 40, 1013, "1997-07-01",
+"Arlene", 50, 1010, "1999-06-13",
+"Arthur", 45, 1010, "1996-06-21"
+)
+
+# filter(storms, wind == 45)
+```
+---
+
+
+class: panel-narrow-slide, left
+
+
+# ggplot2
+
+- [Plotting system for R](https://rpubs.com/hadley/ggplot2-toolbox)
+- [Created by Hadley Wickham](http://ggplot2.org/)
+- [Powerful graphics language for creating elegant and complex plots](http://www.cookbook-r.com/Graphs/)
+- [ggplot2 is a graphing library for R. Use ggplot2 with Plotly to create interactive, online ggplot2 charts with D3.js.](https://plot.ly/ggplot2/)
+- [ggvis is a data visualization package for R](http://ggvis.rstudio.com/)
+
+---
+
+class: panel-narrow-slide, left
+
+# Databases Landscape
+- db.rstuidio.com
+- http://db.rstudio.com/overview
+- https://db.rstudio.com/best-practices/select-interface/
+- DBI
+- dplyr
+- dbplyr [New!]
+- odbc [New!]
+- https://github.com/edgararuiz/db_best_practices_2018
+
+
+---
+
+class: panel-narrow-slide, left
+
+# DB write	queries using dplyr syntax
+- https://datascienceplus.com/working-with-databases-in-r/
+- https://rviews.rstudio.com/2017/10/18/database-queries-with-r/
+
+---
+
+
+class: panel-narrow-slide, left
+
+# Example
+- https://towardsdatascience.com/a-gentle-guide-to-statistics-in-r-ccb91cc1177e
+- http://rpubs.com/jtmock/tidy-stats-in-R
+
+---
+
+
+class: panel-narrow-slide, left
+
+# Interesting
+- https://forcats.tidyverse.org/
+- https://stackoverflow.com/questions/47782707/check-what-lab-tests-are-missing-for-each-subject-using-a-vector-of-the-test-na
+- https://earlconf.com/2017/downloads/sanfrancisco/presentations/earl2017_-_polyamorous_relationship_with_r_-_luke_fostvedt.pdf
+- https://cran.r-project.org/web/packages/gsDesign/index.html
+
+---
+
+
+
+class: panel-narrow-slide, left
+
+# Cheatsheet
+- https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
+---
+
+
+class: panel-narrow-slide, left
+
+# Coming soon
+- gt
+
+---
+
+
+
+class: panel-narrow-slide, left
+
+# On the Horizon
+- Deep Learning ACOP
+- http://www.go-acop.org/conference-program Ctrl F "Machine"
+- https://therbootcamp.github.io/Intro2DataScience_2018Oct/_sessions/NextSteps/NextSteps.html#1
+
+---
+
+class: panel-narrow-slide, left
+
+# Generating Data such as Adverse Events
+- https://github.com/waddella/phuse2016_adverse_events
+- https://rpubs.com/downingtim/Unit1
+
+---
+
+class: panel-narrow-slide, left
+
+ Helping
+- https://www.rstudio.com/resources/videos/contributing-to-tidyverse-packages/
+
+---
+
+class: panel-narrow-slide, left
+
+# Come see us at the RStudio Conference...
+
+- [Austin January 15th through the 18th 2019](https://www.rstudio.com/conference/)
+- https://github.com/rstudio/rstudio-conf/tree/master/2018
+
+---
+
+
+
+
+class: panel-narrow-slide, left
+
+# Collaboration
+
+.pull-left[
+  # [R in Pharma](https://rinpharma.com)
+  ]
+
+---
+
+class: panel-narrow-slide, left
+
+# Clinical Examples
+- https://therbootcamp.github.io/Intro2DataScience_2018Oct/_sessions/CaseStudies/Clinical_Data_Case_Study.html
+- https://github.com/therbootcamp/Intro2DataScience_2018Oct
+- https://github.com/bioinformatics-core-shared-training/r-intermediate/blob/master/2.dplyr-intro.Rmd
+
+---
+class: panel-narrow-slide, left
+
+# Clinical Examples
+- https://therbootcamp.github.io/Intro2DataScience_2018Oct/_sessions/Wrangling/Wrangling_practical.html
+- https://therbootcamp.github.io/Erfurt_2018June/_sessions/D1S2_Wrangling/Wrangling_practical_answers.html
+- https://therbootcamp.github.io/BaselRBootcamp_2018April/schedule
+
+---
+
+class: panel-narrow-slide, left
+
+# Other Examples
+- https://peerj.com/preprints/3163.pdf
+- https://dpastoor.github.io/simplest_bayes/dataset-creation.html
+- https://learnr.me/examples/ggplot_part1.html
+- https://rpubs.com/ledongnhatnam/242506
+---
+class: panel-narrow-slide, left
+
+# Clinical Examples
+- http://r-addict.com/2016/11/21/Optimal-Cutpoint-maxstat.html
+- http://www.rpubs.com/RedBeren/FL_hospital
+- https://nycdatascience.com/blog/student-works/exploring-response-biomarkers-clinical-trial/
+
+---
+
+class: panel-narrow-slide, left
+
+# And more examples : )
+- https://rpubs.com/ledongnhatnam/261629
+- https://datacarpentry.org/R-genomics/04-dplyr.html
+- https://github.com/datacarpentry/R-genomics/
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"countIncrementalSlides": true,
+"highlightLines": true,
+"highlightStyle": "github",
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
