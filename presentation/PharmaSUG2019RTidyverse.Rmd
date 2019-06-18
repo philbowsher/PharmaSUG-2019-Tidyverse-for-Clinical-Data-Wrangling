@@ -134,8 +134,8 @@ class: panel-narrow-slide, left
 class: panel-narrow-slide, left
 
 # Example
-- https://towardsdatascience.com/a-gentle-guide-to-statistics-in-r-ccb91cc1177e
-- http://rpubs.com/jtmock/tidy-stats-in-R
+- https://github.com/rstudio/webinars/tree/master/72-introduction-to-tidy-statistics-with-r
+- https://rstudio.cloud/project/381034
 
 ---
 

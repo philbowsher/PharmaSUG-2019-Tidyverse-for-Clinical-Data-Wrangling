@@ -1,9 +1,9 @@
 library(haven)
 library(tidyverse)
 
-dm <- read_sas("~/shiny-rmd-APIs-DBs-pharma-session-2019-05-02/Data/dm.sas7bdat")
+dm <- read_sas("~/PharmaSUG-2019-Tidyverse-for-Clinical-Data-Wrangling/Data/dm.sas7bdat")
 
-ae <- read_sas("~/shiny-rmd-APIs-DBs-pharma-session-2019-05-02/Data/ae.sas7bdat")
+ae <- read_sas("~/PharmaSUG-2019-Tidyverse-for-Clinical-Data-Wrangling/Data/ae.sas7bdat")
 
 dmae <- ae %>%
   left_join(dm, by = 'USUBJID') %>% rename(STUDYID = STUDYID.x ,  DOMAIN = DOMAIN.x) %>%
