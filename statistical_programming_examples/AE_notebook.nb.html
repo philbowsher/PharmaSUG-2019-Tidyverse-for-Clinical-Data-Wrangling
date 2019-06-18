@@ -11,7 +11,7 @@
 
 <meta name="author" content />
 
-<meta name="date" content="2019-05-01" />
+<meta name="date" content="2019-06-18" />
 
 <title>Bisphosphonates: adverse compared with serious adverse events</title>
 
@@ -76,7 +76,7 @@ display: none;
 padding: 0 4px 0 4px;
 }
 .pagedtable .even {
-background-color: #fcfcfc;
+background-color: rgba(140, 140, 140, 0.1);
 }
 .pagedtable-padding-col {
 display: none;
@@ -1480,7 +1480,7 @@ window.initializeCodeFolding = function(show) {
   var currentIndex = 1;
 
   // select all R code blocks
-  var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan');
+  var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia');
   rCodeBlocks.each(function() {
 
     // create a collapsable div to wrap the code in
@@ -1601,9 +1601,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -1627,6 +1625,9 @@ img {
 }
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -1656,12 +1657,71 @@ button.code-folding-btn:focus {
 </style>
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
@@ -1677,6 +1737,14 @@ $(document).ready(function () {
 </script>
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -1696,7 +1764,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Bisphosphonates: adverse compared with serious adverse events</h1>
-<h4 class="date"><em>2019-05-01</em></h4>
+<h4 class="date">2019-06-18</h4>
 
 </div>
 
@@ -1710,36 +1778,24 @@ $(document).ready(function () {
 <p>Rates of AEs goes over 1, presumably implying the reported number is the number of events, rather than number of people who have an event. Is the data for the specific events defined this way too?</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wIDwtIGdncGxvdChicHBsb3QsIGFlcyh4PXBhZSwgeT1wc2FlLCBsYWJlbD1zdHVkeSkpICtcbiAgZ2VvbV9wb2ludCgpICtcbiAgeGxpbSgwLCAxLjUpICsgeWxpbSgwLDEpICtcbiAgeGxhYihcIkFkdmVyc2UgZXZlbnRzIC8gcGFydGljaXBhbnRzXCIpICsgXG4gIHlsYWIoXCJTZXJpb3VzIGFkdmVyc2UgZXZlbnRzIC8gcGFydGljaXBhbnRzXCIpXG5nZ3Bsb3RseShwKVxuXG5gYGAifQ== -->
-<pre class="r"><code>
-p &lt;- ggplot(bpplot, aes(x=pae, y=psae, label=study)) +
-  geom_point() +
-  xlim(0, 1.5) + ylim(0,1) +
-  xlab(&quot;Adverse events / participants&quot;) + 
-  ylab(&quot;Serious adverse events / participants&quot;)
-ggplotly(p)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG5wIDwtIGdncGxvdChicHBsb3QsIGFlcyh4PXBhZSwgeT1wc2FlLCBsYWJlbD1zdHVkeSkpICtcbiAgZ2VvbV9wb2ludCgpICtcbiAgeGxpbSgwLCAxLjUpICsgeWxpbSgwLDEpICtcbiAgeGxhYihcXEFkdmVyc2UgZXZlbnRzIC8gcGFydGljaXBhbnRzXFwpICsgXG4gIHlsYWIoXFxTZXJpb3VzIGFkdmVyc2UgZXZlbnRzIC8gcGFydGljaXBhbnRzXFwpXG5nZ3Bsb3RseShwKVxuXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r</p>
+<p>p &lt;- ggplot(bpplot, aes(x=pae, y=psae, label=study)) + geom_point() + xlim(0, 1.5) + ylim(0,1) + xlab(events / participants) + ylab(adverse events / participants) ggplotly(p)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Same data visualised another way: studies ordered by rates of serious adverse events. Shows the heterogeneity in AE rates given SAE rates.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wIDwtIFxuICBnZ3Bsb3QoYnBwbG90LCBhZXMoeT1zdHVkeV9vcmRlciwgbGFiZWw9c3R1ZHkpKSArXG4gIGdlb21fcG9pbnQoYWVzKHg9cGFlKSkgK1xuICBnZW9tX3BvaW50KGFlcyh4PXBzYWUpLCBjb2w9XCJyZWRcIikgK1xuICB4bGFiKFwiQWR2ZXJzZSBldmVudHMgLyBwYXJ0aWNpcGFudHNcIikgK1xuICB5bGFiKFwiXCIpICsgXG4gIHNjYWxlX3lfY29udGludW91cyhicmVha3M9YnBwbG90JHN0dWR5X29yZGVyLCBsYWJlbHM9YnBwbG90JHN0dWR5KVxuZ2dwbG90bHkocClcblxuYGBgIn0= -->
-<pre class="r"><code>
-p &lt;- 
-  ggplot(bpplot, aes(y=study_order, label=study)) +
-  geom_point(aes(x=pae)) +
-  geom_point(aes(x=psae), col=&quot;red&quot;) +
-  xlab(&quot;Adverse events / participants&quot;) +
-  ylab(&quot;&quot;) + 
-  scale_y_continuous(breaks=bpplot$study_order, labels=bpplot$study)
-ggplotly(p)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG5wIDwtIFxuICBnZ3Bsb3QoYnBwbG90LCBhZXMoeT1zdHVkeV9vcmRlciwgbGFiZWw9c3R1ZHkpKSArXG4gIGdlb21fcG9pbnQoYWVzKHg9cGFlKSkgK1xuICBnZW9tX3BvaW50KGFlcyh4PXBzYWUpLCBjb2w9XFxyZWRcXCkgK1xuICB4bGFiKFxcQWR2ZXJzZSBldmVudHMgLyBwYXJ0aWNpcGFudHNcXCkgK1xuICB5bGFiKFxcXFwpICsgXG4gIHNjYWxlX3lfY29udGludW91cyhicmVha3M9YnBwbG90JHN0dWR5X29yZGVyLCBsYWJlbHM9YnBwbG90JHN0dWR5KVxuZ2dwbG90bHkocClcblxuYGBgXG5gYGAifQ== -->
+<p><code>r</code>r</p>
+<p>p &lt;- ggplot(bpplot, aes(y=study_order, label=study)) + geom_point(aes(x=pae)) + geom_point(aes(x=psae), col=) + xlab(events / participants) + ylab(\) + scale_y_continuous(breaks=bpplot<span class="math inline">\(study_order, labels=bpplot\)</span>study) ggplotly(p)</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQmlzcGhvc3Bob25hdGVzOiBhZHZlcnNlIGNvbXBhcmVkIHdpdGggc2VyaW91cyBhZHZlcnNlIGV2ZW50cyIKYXV0aG9yOiAiIgpkYXRlOiAiYHIgU3lzLkRhdGUoKWAiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyIGluY2x1ZGUgPSBGQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG89RkFMU0UpCiMgaHR0cHM6Ly9naXRodWIuY29tL2NoamFja3Nvbi9hZHZlcnNlL2Jsb2IvbWFzdGVyL3ZpZ25ldHRlcy9zYWUuUm1kCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkocGxvdGx5KQoKbG9hZCgifi9TQVNfRXhhbXBsZXMvYnBhZS5yZGEiKQoKYnBwbG90IDwtIGJwYWUgJT4lIAogIHJlbmFtZShzdHVkeT1gVHJpYWwgbmFtZWAsCiAgICAgICAgIGFueWFlPWBBTlkgQURWRVJTRSBFVkVOVGAsCiAgICAgICAgIGFueXNhZT1gU0VSSU9VUyBBRFZFUlNFIEVWRU5UU2ApICU+JQogIHNlbGVjdChzdHVkeSwgTiwgYW55YWUsIGFueXNhZSkgJT4lIAogIHJlcGxhY2VfbmEobGlzdChhbnlhZT0wLCBhbnlzYWU9MCkpICU+JQogIGdyb3VwX2J5KHN0dWR5KSAlPiUKICBzdW1tYXJpc2UoTj1zdW0oTiksIGFueWFlPXN1bShhbnlhZSksIGFueXNhZT1zdW0oYW55c2FlKSkgJT4lCiAgbXV0YXRlKHBhZSA9IGFueWFlL04sIHBzYWUgPSBhbnlzYWUvTikgJT4lCiAgYXJyYW5nZShwc2FlKSAlPiUgCiAgbXV0YXRlKHN0dWR5X29yZGVyID0gc2VxKG4oKSkpCgpgYGAKClJhdGVzIG9mIHJlcG9ydGVkIGFkdmVyc2UgZXZlbnRzIGNvbXBhcmVkIHdpdGggcmF0ZXMgb2YgcmVwb3J0ZWQgc2VyaW91cyBhZHZlbnRzLiAgQnkgc3R1ZHksIGFnZ3JlZ2F0ZWQgb3ZlciBhbGwgYXJtcyBvZiB0aGUgc3R1ZHkuIAoKV2VhayBjb3JyZWxhdGlvbiBiZXR3ZWVuIHJhdGVzIG9mIHNlcmlvdXMgdnMgcmF0ZXMgb2YgYWxsIGFkdmVyc2UgZXZlbnRzIAoKSGV0ZXJvZ2VuZWl0eSBpbiBib3RoIG91dGNvbWVzLCBidXQgbGVzcyBoZXRlcm9nZW5laXR5IGZvciBzZXJpb3VzIGFkdmVyc2UgZXZlbnRzIAoKUmF0ZXMgb2YgQUVzIGdvZXMgb3ZlciAxLCBwcmVzdW1hYmx5IGltcGx5aW5nIHRoZSByZXBvcnRlZCBudW1iZXIgaXMgdGhlIG51bWJlciBvZiBldmVudHMsIHJhdGhlciB0aGFuIG51bWJlciBvZiBwZW9wbGUgd2hvIGhhdmUgYW4gZXZlbnQuICAgSXMgdGhlIGRhdGEgZm9yIHRoZSBzcGVjaWZpYyBldmVudHMgZGVmaW5lZCB0aGlzIHdheSB0b28/IAoKYGBge3IsIGZpZy53aWR0aD04LCBmaWcuaGVpZ2h0PTUuM30KCnAgPC0gZ2dwbG90KGJwcGxvdCwgYWVzKHg9cGFlLCB5PXBzYWUsIGxhYmVsPXN0dWR5KSkgKwogIGdlb21fcG9pbnQoKSArCiAgeGxpbSgwLCAxLjUpICsgeWxpbSgwLDEpICsKICB4bGFiKCJBZHZlcnNlIGV2ZW50cyAvIHBhcnRpY2lwYW50cyIpICsgCiAgeWxhYigiU2VyaW91cyBhZHZlcnNlIGV2ZW50cyAvIHBhcnRpY2lwYW50cyIpCmdncGxvdGx5KHApCgpgYGAKClNhbWUgZGF0YSB2aXN1YWxpc2VkIGFub3RoZXIgd2F5OiBzdHVkaWVzIG9yZGVyZWQgYnkgcmF0ZXMgb2Ygc2VyaW91cyBhZHZlcnNlIGV2ZW50cy4gIFNob3dzIHRoZSBoZXRlcm9nZW5laXR5IGluIEFFIHJhdGVzIGdpdmVuIFNBRSByYXRlcy4gCgpgYGB7ciwgZmlnLndpZHRoPTgsIGZpZy5oZWlnaHQ9MTJ9CgpwIDwtIAogIGdncGxvdChicHBsb3QsIGFlcyh5PXN0dWR5X29yZGVyLCBsYWJlbD1zdHVkeSkpICsKICBnZW9tX3BvaW50KGFlcyh4PXBhZSkpICsKICBnZW9tX3BvaW50KGFlcyh4PXBzYWUpLCBjb2w9InJlZCIpICsKICB4bGFiKCJBZHZlcnNlIGV2ZW50cyAvIHBhcnRpY2lwYW50cyIpICsKICB5bGFiKCIiKSArIAogIHNjYWxlX3lfY29udGludW91cyhicmVha3M9YnBwbG90JHN0dWR5X29yZGVyLCBsYWJlbHM9YnBwbG90JHN0dWR5KQpnZ3Bsb3RseShwKQoKYGBg</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQmlzcGhvc3Bob25hdGVzOiBhZHZlcnNlIGNvbXBhcmVkIHdpdGggc2VyaW91cyBhZHZlcnNlIGV2ZW50cyIKYXV0aG9yOiAiIgpkYXRlOiAiYHIgU3lzLkRhdGUoKWAiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyIGluY2x1ZGUgPSBGQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG89RkFMU0UpCiMgaHR0cHM6Ly9naXRodWIuY29tL2NoamFja3Nvbi9hZHZlcnNlL2Jsb2IvbWFzdGVyL3ZpZ25ldHRlcy9zYWUuUm1kCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkocGxvdGx5KQoKbG9hZCgifi9QaGFybWFTVUctMjAxOS1UaWR5dmVyc2UtZm9yLUNsaW5pY2FsLURhdGEtV3JhbmdsaW5nL0RhdGEvYnBhZS5yZGEiKQoKYnBwbG90IDwtIGJwYWUgJT4lIAogIHJlbmFtZShzdHVkeT1gVHJpYWwgbmFtZWAsCiAgICAgICAgIGFueWFlPWBBTlkgQURWRVJTRSBFVkVOVGAsCiAgICAgICAgIGFueXNhZT1gU0VSSU9VUyBBRFZFUlNFIEVWRU5UU2ApICU+JQogIHNlbGVjdChzdHVkeSwgTiwgYW55YWUsIGFueXNhZSkgJT4lIAogIHJlcGxhY2VfbmEobGlzdChhbnlhZT0wLCBhbnlzYWU9MCkpICU+JQogIGdyb3VwX2J5KHN0dWR5KSAlPiUKICBzdW1tYXJpc2UoTj1zdW0oTiksIGFueWFlPXN1bShhbnlhZSksIGFueXNhZT1zdW0oYW55c2FlKSkgJT4lCiAgbXV0YXRlKHBhZSA9IGFueWFlL04sIHBzYWUgPSBhbnlzYWUvTikgJT4lCiAgYXJyYW5nZShwc2FlKSAlPiUgCiAgbXV0YXRlKHN0dWR5X29yZGVyID0gc2VxKG4oKSkpCgpgYGAKClJhdGVzIG9mIHJlcG9ydGVkIGFkdmVyc2UgZXZlbnRzIGNvbXBhcmVkIHdpdGggcmF0ZXMgb2YgcmVwb3J0ZWQgc2VyaW91cyBhZHZlbnRzLiAgQnkgc3R1ZHksIGFnZ3JlZ2F0ZWQgb3ZlciBhbGwgYXJtcyBvZiB0aGUgc3R1ZHkuIAoKV2VhayBjb3JyZWxhdGlvbiBiZXR3ZWVuIHJhdGVzIG9mIHNlcmlvdXMgdnMgcmF0ZXMgb2YgYWxsIGFkdmVyc2UgZXZlbnRzIAoKSGV0ZXJvZ2VuZWl0eSBpbiBib3RoIG91dGNvbWVzLCBidXQgbGVzcyBoZXRlcm9nZW5laXR5IGZvciBzZXJpb3VzIGFkdmVyc2UgZXZlbnRzIAoKUmF0ZXMgb2YgQUVzIGdvZXMgb3ZlciAxLCBwcmVzdW1hYmx5IGltcGx5aW5nIHRoZSByZXBvcnRlZCBudW1iZXIgaXMgdGhlIG51bWJlciBvZiBldmVudHMsIHJhdGhlciB0aGFuIG51bWJlciBvZiBwZW9wbGUgd2hvIGhhdmUgYW4gZXZlbnQuICAgSXMgdGhlIGRhdGEgZm9yIHRoZSBzcGVjaWZpYyBldmVudHMgZGVmaW5lZCB0aGlzIHdheSB0b28/IAoKYGBge3IsIGZpZy53aWR0aD04LCBmaWcuaGVpZ2h0PTUuM30KCnAgPC0gZ2dwbG90KGJwcGxvdCwgYWVzKHg9cGFlLCB5PXBzYWUsIGxhYmVsPXN0dWR5KSkgKwogIGdlb21fcG9pbnQoKSArCiAgeGxpbSgwLCAxLjUpICsgeWxpbSgwLDEpICsKICB4bGFiKCJBZHZlcnNlIGV2ZW50cyAvIHBhcnRpY2lwYW50cyIpICsgCiAgeWxhYigiU2VyaW91cyBhZHZlcnNlIGV2ZW50cyAvIHBhcnRpY2lwYW50cyIpCmdncGxvdGx5KHApCgpgYGAKClNhbWUgZGF0YSB2aXN1YWxpc2VkIGFub3RoZXIgd2F5OiBzdHVkaWVzIG9yZGVyZWQgYnkgcmF0ZXMgb2Ygc2VyaW91cyBhZHZlcnNlIGV2ZW50cy4gIFNob3dzIHRoZSBoZXRlcm9nZW5laXR5IGluIEFFIHJhdGVzIGdpdmVuIFNBRSByYXRlcy4gCgpgYGB7ciwgZmlnLndpZHRoPTgsIGZpZy5oZWlnaHQ9MTJ9CgpwIDwtIAogIGdncGxvdChicHBsb3QsIGFlcyh5PXN0dWR5X29yZGVyLCBsYWJlbD1zdHVkeSkpICsKICBnZW9tX3BvaW50KGFlcyh4PXBhZSkpICsKICBnZW9tX3BvaW50KGFlcyh4PXBzYWUpLCBjb2w9InJlZCIpICsKICB4bGFiKCJBZHZlcnNlIGV2ZW50cyAvIHBhcnRpY2lwYW50cyIpICsKICB5bGFiKCIiKSArIAogIHNjYWxlX3lfY29udGludW91cyhicmVha3M9YnBwbG90JHN0dWR5X29yZGVyLCBsYWJlbHM9YnBwbG90JHN0dWR5KQpnZ3Bsb3RseShwKQoKYGBg</div>
 
 
 

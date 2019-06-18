@@ -311,8 +311,8 @@ kable(head(tidy_ad_tukey))
 
 ```{r, eval = F}
 # write the posthocs to excel
-write.csv(rr_last_pairwise, "rr_last_post-hoc.csv")
-write.csv(rr_last_tukey, "rr_last_tukey_post-hoc.csv")
+write.csv(tidy_ad_pairwise, "rr_last_post-hoc.csv")
+write.csv(tidy_ad_tukey, "rr_last_tukey_post-hoc.csv")
 ```
   
 ***

@@ -12,7 +12,7 @@ dmae <- ae %>%
 dmae
 
 write_sas(dmae, "dmae.sas7bdat")
-write_xpt(dmae, " dmae.xpt")
+# write_xpt(dmae, " dmae.xpt")
 
 dplyr::glimpse(dmae)
 
